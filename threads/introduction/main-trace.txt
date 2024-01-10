@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+
+
+mov 0x8049cd4, %eax # load balance
+add $0x1, %eax      # add
+mov %eax, 0x8049cd4 # store
+
+Problem: Each thread (t1, t2) will run through the above 
+code sequence once; what is the final value of counter?
+(how many different final values are possible?)
+
+Thread 1              Thread 2             %eax  balance
+--------              --------             ----  -------
+                                             0     100
+mov 0x8049cd4, %eax                        100     100
+add $0x1, %eax                             101     100
+mov %eax, 0x8049cd4                        101     101
+*** INTERRUPT *** (context switch)           0     101
+                      mov 0x8049cd4, %eax  101     101 
+                      add $0x1, %eax       102     101
+                      mov %eax, 0x8049cd4  102     102 **
+
+TRY #2:
+                                             0     100
+mov 0x8049cd4, %eax                        100     100
+add $0x1, %eax                             101     100
+*** INTERRUPT *** (context switch)           0     100
+                      mov 0x8049cd4, %eax  100     100
+                      add $0x1, %eax       101     100
+                      mov %eax, 0x8049cd4  101     101 
+*** INTERRUPT *** (context switch)         101     101
+mov %eax, 0x8049cd4                        101     101
+
+
+
+
+
+
+
+

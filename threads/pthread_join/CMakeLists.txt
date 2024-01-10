@@ -1,0 +1,5 @@
+cmake_minimum_required (VERSION 2.6)
+project(t0)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 -g")
+add_executable(pthreadjoin t0.c)
+target_link_libraries(pthreadjoin pthread)

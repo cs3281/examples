@@ -1,0 +1,7 @@
+project(introduction)
+add_executable(cpu cpu.c)
+target_link_libraries(cpu pthread)
+add_executable(io io.c)
+add_executable(mem mem.c)
+target_link_libraries(io pthread)
+target_link_libraries(mem pthread)

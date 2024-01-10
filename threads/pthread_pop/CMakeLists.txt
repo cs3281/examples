@@ -1,0 +1,5 @@
+cmake_minimum_required (VERSION 2.6)
+project(pthread_pop_example)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 -g")
+add_executable(pthread_pop_example pthread_pop_example.c)
+target_link_libraries(pthread_pop_example pthread)

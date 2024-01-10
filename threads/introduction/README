@@ -1,0 +1,40 @@
+There are a series of codes to look at:
+
+main-thread-0
+- This example illustrates the major terms used in this part of the course:
+non-deterministic (indeterminate) code, critical sections, race conditions,
+and the need for mutual exclusion. 
+
+This is a good example to think about the power
+of atomicity; how one can view as a single instruction as a powerful atomic
+update of state, but that a short instruction sequence can be interrupted, is
+thus not atomic, and is at the heart of the problem.
+
+
+main-thread-1
+- Shows how to fix the problem with these things called locks (or
+mutex's). The code works, but it's kind of slow (you can time it from the
+command line).
+
+main-thread-2
+- This is a faster version, using more coarse-grained locks. You should guess this solution
+
+main-thread-3
+- This one gives a broken but intuitive attempt at answering the question:
+just what does a lock do? Basically, the code tries to do a test-and-set, but
+does not do so atomically. Take a look at the code and tell why it does not work.
+
+main-thread-4
+- Now finally here is a good hardware primitive to build on.Think about how you need a little bit more
+powerful instructions from the hardware. Some history here is nice, as these
+types of instructions have been in hardware forever, dating at least as far
+back as some early Burroughs machines. Find about the exchange, or
+test-and-set, instruction does (atomically returns the old value while setting
+the new value), and see if you can figure out how to use it to build a
+lock. 
+
+main-thread-5
+- A solution that uses the exchange primitive to build a lock. All of this
+should work a-ok on linux/x86 with gcc! On other platforms, you'll have to do
+some work.
+

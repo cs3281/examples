@@ -1,0 +1,6 @@
+This example shows the case where the getline is being interrupted by sigchld.
+The sigaction API needs to be provided the SA_RESTART flag in order to restart the read system call issued by the getline library function.
+If you run the version without SA_RESTART, the getline call will end up in a loop because it will keep on returning an error state. 
+The version with SA_RESTART works correctly.
+
+

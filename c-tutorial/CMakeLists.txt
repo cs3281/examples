@@ -1,0 +1,16 @@
+cmake_minimum_required (VERSION 2.8)
+project (examples)
+enable_testing()
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+add_executable(function-pointers 5-function-pointers.c)
+add_executable(initialize 2-initialize.c)  
+add_executable(pointers 3-pointers.c)  
+add_executable(array-pointers 4-arrays-pointers.c)  
+add_executable(hello 1-hello.c)
+
+
+add_test(NAME hello COMMAND  hello WORKING_DIERCTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+add_test(NAME array-pointers COMMAND  array-pointers WORKING_DIERCTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+add_test(NAME pointers COMMAND  pointers WORKING_DIERCTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+add_test(NAME initialize COMMAND  initialize WORKING_DIERCTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+add_test(NAME function-pointers COMMAND  function-pointers WORKING_DIERCTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
