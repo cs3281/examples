@@ -12,3 +12,4 @@ CTestCostData.txt
 c-tutorial/tests/Makefile
 systemcall/tests/Makefile
 .DS_Store
+c-tutorial/.DS_Store
