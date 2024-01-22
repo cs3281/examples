@@ -1,0 +1,13 @@
+
+c-tutorial/bin/array-pointers
+CMakeFiles 
+CMakeCache.txt
+cmake_install.cmake
+bin
+CTestTestfile.cmake
+LastTest.log
+LastTestsFailed.log
+CTestCostData.txt
+*tests/Makefile
+c-tutorial/tests/Makefile
+systemcall/tests/Makefile
