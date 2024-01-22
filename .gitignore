@@ -13,3 +13,8 @@ c-tutorial/tests/Makefile
 systemcall/tests/Makefile
 .DS_Store
 c-tutorial/.DS_Store
+exceptions/div_by_zero
+exceptions/infinite_loop
+exceptions/Makefile
+exceptions/segfault_demo
+exceptions/signal_handler
