@@ -11,3 +11,4 @@ CTestCostData.txt
 *tests/Makefile
 c-tutorial/tests/Makefile
 systemcall/tests/Makefile
+.DS_Store
