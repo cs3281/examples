@@ -1,1 +1,1 @@
-There are several thread examples in this folder.
+There are several thread examples in this folder. Start with introduction, then attributes, then join, pop and clean up. Then look at the synchronization examples: semaphores and then condition variables.
